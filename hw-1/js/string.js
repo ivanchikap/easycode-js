@@ -18,13 +18,14 @@ console.log(newString);
 console.log(string.indexOf('string'));
 
 // 4. Найти положение второго пробела (“вручную” ничего не считать)
-console.log(string.lastIndexOf(' '));
+let secondSpace = string.indexOf(' ', string.indexOf(' ') + 1);
+console.log(secondSpace);
 
 // 5. Получить строку с 5-го символа длиной 4 буквы
-console.log(string.substr(5, 4));
+console.log(string.substr(4, 4));
 
 // 6. Получить строку с 5-го по 9-й символы
-console.log(string.substring(5, 9));
+console.log(string.substring(4, 8));
 
 // 7. Получить новую строку из исходной путем удаления последних 6-и символов(то есть исходная строка без последних 6и символов)
 console.log(string.slice(0, -6));
@@ -37,5 +38,6 @@ let b = 16;
 // string = a + b;
 string = a.toString() + b.toString();
 console.log(string);
+console.log(`${a}${b}`);
 
 console.log('--- String. Task. END ---');

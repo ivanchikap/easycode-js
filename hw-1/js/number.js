@@ -4,6 +4,8 @@ console.log('--- Number. Task. START ---');
 console.log(+(Math.PI).toFixed(2), 'this method is not correct, because toFixed() method can round incorrectly');
 console.log(Math.round((Math.PI*100))/100 , 'correct method');
 
+console.log(parseFloat((Math.PI).toFixed(2)), 'this method is not correct, because toFixed() method can round incorrectly');
+
 // 2. Используя Math, найти максимальное и минимальное числа из представленного ряда 15, 11, 16, 12, 51, 12, 13, 51
 console.log(Math.max(15, 11, 16, 12, 51, 12, 13, 51));
 console.log(Math.min(15, 11, 16, 12, 51, 12, 13, 51));
@@ -23,6 +25,7 @@ console.log(Math.round(Math.random() * X), 'Рандомное число от 0
 // 4. Проверить результат вычисления 0.6 + 0.7 - как привести к нормальному виду (1.3)?
 
 console.log(+(0.6 + 0.7).toFixed(10));
+console.log(parseFloat((0.6 + 0.7).toFixed(10)));
 
 // 5. Получить число из строки ‘100$’
 console.log(parseInt('100$'));
