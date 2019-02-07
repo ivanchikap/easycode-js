@@ -1,5 +1,6 @@
 const newsService = new NewsService();
 const uiService = new NewsUI();
+const notificationsUI = new NotificationsUI();
 
 // UI Elements
 const form = document.forms['newsControlForm'];
@@ -19,6 +20,7 @@ function onSelectChange(event) {
         // console.time();
         uiService.clearContainer();
         // console.timeEnd();
+        notificationsUI.clearContainer();
 
         // console.time();
         articles.forEach((article) => uiService.addArticle(article));
@@ -26,12 +28,16 @@ function onSelectChange(event) {
     });
 }
 
-function onInputChange(event) {
+function onInputChange() {
     const search = searchInput.value;
 
     if (search.length > 2) {
         newsService.getNewsByPhrase(search, (response) => {
             const { totalResults, articles } = response;
+            notificationsUI.clearContainer();
+            if (totalResults === 0) {
+                notificationsUI.addNotification();
+            }
 
             uiService.clearContainer();
 
@@ -44,6 +50,7 @@ countrySelect.addEventListener('change', onSelectChange);
 categorySelect.addEventListener('change', onSelectChange);
 
 searchInput.addEventListener('keyup', onInputChange);
+
 
 
 

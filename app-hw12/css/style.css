@@ -1,0 +1,6 @@
+.news-wrap {
+    position: relative;
+}
+.no-news-found {
+    position: fixed;
+}
